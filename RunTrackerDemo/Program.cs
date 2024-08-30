@@ -1,5 +1,8 @@
-using RunTrackerDemo.Data;
+using Application.Contracts;
+using Application.Data.Data;
+using Application.Services;
 using Microsoft.EntityFrameworkCore;
+using RunTrackerDemo.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,11 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultHostConnection")));
 
+//Service registration
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRunningActivityService, RunningActivityService>();
+
+builder.Services.AddAutoMapper(typeof(ModelMapper));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

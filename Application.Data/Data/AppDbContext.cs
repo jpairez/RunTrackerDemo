@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RunTrackerDemo.Models;
+﻿using Application.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace RunTrackerDemo.Data
+namespace Application.Data.Data
 {
     public class AppDbContext : DbContext
     {
@@ -13,10 +13,9 @@ namespace RunTrackerDemo.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-                        .HasMany(user => user.RunningActivity)
+                        .HasMany(user => user.RunningActivities)
                         .WithOne(ra => ra.User)
-                        .HasForeignKey(ra => ra.User.Id);
+                        .HasForeignKey(ra => ra.UserId);
         }
-
     }
 }
