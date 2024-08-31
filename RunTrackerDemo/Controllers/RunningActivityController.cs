@@ -1,4 +1,4 @@
-﻿using Application.Contract.Dto;
+﻿using Application.RunTracker.Contracts.Dto;
 using Application.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,28 +8,41 @@ namespace RunTrackerDemo.Controllers
     [ApiController]
     public class RunningActivityController : ControllerBase, IRunningActivityService
     {
-        [HttpPost]
-        public Task<RunningActivityDto> CreateRunningActivityAsync(RunningActivityDto runningActivityDto)
+        private readonly IRunningActivityService _runningActivityService;
+
+        public RunningActivityController(IRunningActivityService runningActivityService)
         {
-            throw new NotImplementedException();
+            _runningActivityService = runningActivityService;
+        }
+
+        [HttpPost]
+        public async Task<RunningActivityDto> CreateRunningActivityAsync(CreateUpdateRunningActivityDto runningActivityDto)
+        {
+            return await _runningActivityService.CreateRunningActivityAsync(runningActivityDto);
         }
 
         [HttpDelete("{id}")]
-        public Task<bool> DeleteRunningActivityAsync(int id)
+        public async Task<bool> DeleteRunningActivityAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _runningActivityService.DeleteRunningActivityAsync(id);
         }
 
         [HttpGet("{id}")]
-        public Task<List<RunningActivityDto>> GetRunningActivitiesAsync()
+        public async Task<List<RunningActivityDto>> GetRunningActivitiesAsync()
         {
-            throw new NotImplementedException();
+            return await _runningActivityService.GetRunningActivitiesAsync();
         }
 
         [HttpGet]
-        public Task<RunningActivityDto> GetRunningActivityByIdAsync(int id)
+        public async Task<RunningActivityDto> GetRunningActivityByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _runningActivityService.GetRunningActivityByIdAsync(id);
+        }
+
+        [HttpPut]
+        public async Task<RunningActivityDto> UpdateRunningActivityAsync(int id, CreateUpdateRunningActivityDto input)
+        {
+            return await _runningActivityService.UpdateRunningActivityAsync(id, input);
         }
     }
 }

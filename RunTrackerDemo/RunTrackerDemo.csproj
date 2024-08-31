@@ -18,9 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Contract\Application.Contracts.csproj" />
-    <ProjectReference Include="..\Application.Data\Application.Data.csproj" />
-    <ProjectReference Include="..\Application.Services\Application.Services.csproj" />
+    <ProjectReference Include="..\Application.Contract\Application.RunTracker.Contracts.csproj" />
+    <ProjectReference Include="..\Application.Data\Application.RunTracker.Data.csproj" />
+    <ProjectReference Include="..\Application.Services\Application.RunTracker.Services.csproj" />
   </ItemGroup>
 
 </Project>

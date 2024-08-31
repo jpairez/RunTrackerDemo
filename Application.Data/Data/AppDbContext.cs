@@ -1,7 +1,7 @@
-﻿using Application.Data.Models;
+﻿using Application.RunTracker.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Data.Data
+namespace Application.RunTracker.Data
 {
     public class AppDbContext : DbContext
     {

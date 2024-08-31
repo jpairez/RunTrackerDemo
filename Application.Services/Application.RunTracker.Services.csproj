@@ -8,11 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Contract\Application.Contracts.csproj" />
-    <ProjectReference Include="..\Application.Data\Application.Data.csproj" />
+    <ProjectReference Include="..\Application.Contract\Application.RunTracker.Contracts.csproj" />
+    <ProjectReference Include="..\Application.Data\Application.RunTracker.Data.csproj" />
   </ItemGroup>
 
 </Project>

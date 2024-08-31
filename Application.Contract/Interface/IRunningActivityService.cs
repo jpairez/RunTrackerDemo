@@ -1,4 +1,4 @@
-﻿using Application.Contract.Dto;
+﻿using Application.RunTracker.Contracts.Dto;
 
 namespace Application.Contracts
 {
@@ -6,7 +6,8 @@ namespace Application.Contracts
     {
         Task<List<RunningActivityDto>> GetRunningActivitiesAsync();
         Task<RunningActivityDto> GetRunningActivityByIdAsync(int id);
-        Task<RunningActivityDto> CreateRunningActivityAsync(RunningActivityDto runningActivityDto);
+        Task<RunningActivityDto> CreateRunningActivityAsync(CreateUpdateRunningActivityDto input);
         Task<bool> DeleteRunningActivityAsync(int id);
+        Task<RunningActivityDto> UpdateRunningActivityAsync(int id, CreateUpdateRunningActivityDto input);
     }
 }

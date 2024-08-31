@@ -1,6 +1,6 @@
-﻿namespace Application.Contract.Dto
+﻿namespace Application.RunTracker.Contracts.Dto
 {
-    public class CreateRunningActivityDto
+    public class CreateUpdateRunningActivityDto
     {
         public string Location { get; set; }
         public DateTime RunStart { get; set; }
@@ -18,6 +18,9 @@
         {
             get
             {
+                if (Duration <= 0)
+                    return 0;
+
                 return Duration / Distance;
             }
         }

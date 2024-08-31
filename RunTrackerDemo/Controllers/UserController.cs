@@ -1,4 +1,4 @@
-﻿using Application.Contract.Dto;
+﻿using Application.RunTracker.Contracts.Dto;
 using Application.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +16,9 @@ namespace RunTrackerDemo.Controllers
         }
 
         [HttpPost]
-        public async Task<UserDto> CreateUserAsync(CreateUserDto user)
+        public async Task<UserDto> CreateUserAsync(CreateUpdateUserDto input)
         {
-            return await _userService.CreateUserAsync(user);
+            return await _userService.CreateUserAsync(input);
         }
 
         [HttpDelete("{id}")]
@@ -37,6 +37,18 @@ namespace RunTrackerDemo.Controllers
         public async Task<List<UserDto>> GetUsersAsync()
         {
             return await _userService.GetUsersAsync();
+        }
+
+        [HttpGet("with-activity/{id}")]
+        public async Task<UserWithRunningActivityDto> GetUserWithRunningActivitiesAsync(int id)
+        {
+           return await _userService.GetUserWithRunningActivitiesAsync(id);
+        }
+
+        [HttpPut]
+        public async Task<UserDto> UpdateUserAsync(int id, CreateUpdateUserDto input)
+        {
+            return await _userService.UpdateUserAsync(id, input);
         }
     }
 }

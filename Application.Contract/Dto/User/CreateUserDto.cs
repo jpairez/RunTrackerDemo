@@ -1,6 +1,6 @@
-﻿namespace Application.Contract.Dto
+﻿namespace Application.RunTracker.Contracts.Dto
 {
-    public class CreateUserDto
+    public class CreateUpdateUserDto
     {
         public required string Name { get; set; }
         public int WeightInKilogram { get; set; }

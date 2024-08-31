@@ -1,5 +1,5 @@
-﻿using Application.Contract.Dto;
-using Application.Data.Models;
+﻿using Application.RunTracker.Contracts.Dto;
+using Application.RunTracker.Data.Models;
 using AutoMapper;
 
 namespace RunTrackerDemo.Config
@@ -9,9 +9,8 @@ namespace RunTrackerDemo.Config
         public ModelMapper()
         {
             CreateMap<User, UserDto>();
-            CreateMap<UserDto, User>();
             CreateMap<RunningActivity, RunningActivityDto>();
-            CreateMap<RunningActivityDto, RunningActivity>();
+            CreateMap<User, UserWithRunningActivityDto>();
         }
     }
 }

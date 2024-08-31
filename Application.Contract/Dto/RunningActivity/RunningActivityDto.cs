@@ -1,4 +1,4 @@
-﻿namespace Application.Contract.Dto
+﻿namespace Application.RunTracker.Contracts.Dto
 {
     public class RunningActivityDto
     {

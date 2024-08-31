@@ -1,5 +1,5 @@
 using Application.Contracts;
-using Application.Data.Data;
+using Application.RunTracker.Data;
 using Application.Services;
 using Microsoft.EntityFrameworkCore;
 using RunTrackerDemo.Config;

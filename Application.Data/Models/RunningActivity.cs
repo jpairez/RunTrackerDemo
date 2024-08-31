@@ -1,4 +1,4 @@
-﻿namespace Application.Data.Models
+﻿namespace Application.RunTracker.Data.Models
 {
     public class RunningActivity
     {
@@ -11,6 +11,6 @@
         public int AveragePace { get; set; }
 
         public int UserId { get; set; }
-        public required User User { get; set; }
+        public User User { get; set; }
     }
 }

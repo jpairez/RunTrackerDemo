@@ -1,15 +1,16 @@
-﻿namespace Application.RunTracker.Data.Models
+﻿
+namespace Application.RunTracker.Contracts.Dto
 {
-    public class User
+    public class UserWithRunningActivityDto
     {
         public int Id { get; set; }
-        public required string Name { get; set; }
+        public string Name { get; set; }
         public int Weight { get; set; }
         public int Height { get; set; }
         public DateTime Birthdate { get; set; }
         public int Age { get; set; }
         public int BMI { get; set; }
 
-        public List<RunningActivity> RunningActivities { get; set; } = new List<RunningActivity>();
+        public List<RunningActivityDto> RunningActivities { get; set; } = new List<RunningActivityDto>();
     }
 }
