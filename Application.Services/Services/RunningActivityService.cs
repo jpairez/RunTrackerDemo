@@ -28,7 +28,9 @@ namespace Application.Services
                 Location = input.Location,
                 RunStart = input.RunStart,
                 RunEnd = input.RunEnd,
-                Distance = input.Distance,
+                Distance = input.DistanceInKilometer,
+                Duration = input.Duration,
+                AveragePace = input.AveragePace,
                 UserId = input.UserId
             };
             _logger.LogInformation($"Adding running activity for userid {input.UserId}.");
@@ -85,7 +87,9 @@ namespace Application.Services
             runningActivity.Location = input.Location;
             runningActivity.RunStart = input.RunStart;
             runningActivity.RunEnd = input.RunEnd;
-            runningActivity.Distance = input.Distance;
+            runningActivity.Distance = input.DistanceInKilometer;
+            runningActivity.Duration = input.Duration;
+            runningActivity.AveragePace = input.AveragePace;
             runningActivity.UserId = input.UserId;
 
             _context.RunningActivities.Update(runningActivity);

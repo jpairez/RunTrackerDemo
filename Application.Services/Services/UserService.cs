@@ -71,6 +71,7 @@ namespace Application.Services
         public async Task<List<UserDto>> GetUsersAsync()
         {
             var users = await _context.Users.ToListAsync();
+            //var users = await _context.Users.
             return _mapper.Map<List<UserDto>>(users);
         }
 

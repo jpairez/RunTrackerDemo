@@ -5,13 +5,13 @@
         public string Location { get; set; }
         public DateTime RunStart { get; set; }
         public DateTime RunEnd { get; set; }
-        public int Distance { get; set; }
+        public int DistanceInKilometer { get; set; }
         public int Duration
         {
             get
             {
-                TimeSpan duration = RunStart - RunEnd;
-                return (int)duration.TotalSeconds;
+                TimeSpan duration = RunEnd - RunStart;
+                return (int)duration.TotalSeconds / 60;
             }
         }
         public int AveragePace
@@ -21,7 +21,7 @@
                 if (Duration <= 0)
                     return 0;
 
-                return Duration / Distance;
+                return Duration / DistanceInKilometer;
             }
         }
         public int UserId { get; set; }

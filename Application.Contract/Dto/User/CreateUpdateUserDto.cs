@@ -24,7 +24,8 @@
                     return 0;
                 }
 
-                return WeightInKilogram / (HeightInCentimeter * HeightInCentimeter);
+                decimal heightInMeter = (decimal)HeightInCentimeter / 100;
+                return (int)(WeightInKilogram / (heightInMeter * heightInMeter));
             }
         }
     }

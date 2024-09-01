@@ -6,9 +6,10 @@ namespace Application.RunTracker.Data
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public AppDbContext() : base() { }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<RunningActivity> RunningActivities { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<RunningActivity> RunningActivities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
