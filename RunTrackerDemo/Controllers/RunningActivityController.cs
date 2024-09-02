@@ -28,13 +28,13 @@ namespace RunTrackerDemo.Controllers
             return await _runningActivityService.DeleteRunningActivityAsync(id);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public async Task<List<RunningActivityDto>> GetRunningActivitiesAsync()
         {
             return await _runningActivityService.GetRunningActivitiesAsync();
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<RunningActivityDto> GetRunningActivityByIdAsync(int id)
         {
             return await _runningActivityService.GetRunningActivityByIdAsync(id);
