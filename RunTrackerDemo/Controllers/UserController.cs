@@ -4,8 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RunTrackerDemo.Controllers
 {
-    [Route("api/user")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/user")]
+    [ApiVersion("1.0")]
     public class UserController : ControllerBase, IUserService
     {
         private readonly IUserService _userService;

@@ -4,8 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RunTrackerDemo.Controllers
 {
-    [Route("api/runningactivity")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/runningactivity")]
+    [ApiVersion("1.0")]
     public class RunningActivityController : ControllerBase, IRunningActivityService
     {
         private readonly IRunningActivityService _runningActivityService;
